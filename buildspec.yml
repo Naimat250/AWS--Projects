@@ -14,11 +14,11 @@ phases:
   post_build:
     commands:
       - echo "Packaging files and preparing to upload to S3"
-      
 
 artifacts:
   files:
-    - '/**/*'
+    - '**/*'
+  discard-paths: yes  # Optional: Flatten the directory structure
 
-  # Specify the S3 bucket to store the artifacts
-  
+# Optional: Define a base directory if needed
+# base-directory: 'build_output'
