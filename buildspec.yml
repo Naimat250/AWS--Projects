@@ -1,19 +1,20 @@
 version: 0.2
+
 phases:
   install:
     commands:
       - echo "Installing Nginx"
       - sudo yum update -y
       - sudo yum install nginx -y
+  
   build:
     commands:
       - echo "Build started on `date`"
-      - mkdir -p artifact
-      - cp -r cop/* artifact/
+      - echo "Building the project"
+  
   post_build:
     commands:
       - echo "Configuring Nginx"
+      - sudo cp -r cop/* /usr/share/nginx/html/
 
-artifacts:
-  files:
-    - artifact/**
+# No artifacts section since you're not using any.
