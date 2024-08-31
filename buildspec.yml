@@ -14,13 +14,11 @@ phases:
   post_build:
     commands:
       - echo "Packaging files and preparing to upload to S3"
-      - mkdir -p output
-      - cp -r * output/
-      - echo "All files copied to output directory"
+      
 
 artifacts:
   files:
-    - output/**
+    - '/**'
 
   # Specify the S3 bucket to store the artifacts
-  discard-paths: yes
+  
