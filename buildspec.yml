@@ -10,12 +10,17 @@ phases:
   build:
     commands:
       - echo "Build started on `date`"
-      - echo "Building the project"
   
   post_build:
     commands:
-      - echo "Configuring Nginx"
-      - sudo cp index.html /usr/share/nginx/html/
+      - echo "Packaging files and preparing to upload to S3"
+      - mkdir -p output
+      - cp -r * output/
+      - echo "All files copied to output directory"
 
+artifacts:
+  files:
+    - output/**
 
-# No artifacts section since you're not using any.
+  # Specify the S3 bucket to store the artifacts
+  discard-paths: yes
