@@ -18,7 +18,7 @@ phases:
 
 artifacts:
   files:
-    - '/**'
+    - '/**/*'
 
   # Specify the S3 bucket to store the artifacts
   
