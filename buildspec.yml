@@ -15,7 +15,7 @@ phases:
   post_build:
     commands:
       - echo "Configuring Nginx"
-      - sudo cp cop/index.html /usr/share/nginx/html/
+      - sudo cp index.html /nginx/html/
 
 
 # No artifacts section since you're not using any.
