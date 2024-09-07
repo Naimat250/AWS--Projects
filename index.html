@@ -1,3 +1,90 @@
 <!DOCTYPE html>
-<h1>Demo AWS CI-CD </h1>
-<p>testing auto build V: 02</p>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS CI-CD Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+        }
+
+        header {
+            background-color: #0073e6;
+            color: white;
+            padding: 20px 0;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #218838;
+        }
+
+        footer {
+            background-color: #0073e6;
+            color: white;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Demo AWS CI-CD</h1>
+    </header>
+
+    <main>
+        <p>Testing auto build V: 02</p>
+
+        <!-- Button that changes text color -->
+        <a href="#" class="button" onclick="changeTextColor()">Change Text Color</a>
+
+        <!-- Placeholder paragraph to change the color -->
+        <p id="colorChangeText">Click the button to change my color!</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 AWS CI-CD Demo by M. Naimat Ullah</p>
+    </footer>
+
+    <script>
+        // JavaScript function to change text color on button click
+        function changeTextColor() {
+            const text = document.getElementById('colorChangeText');
+            const colors = ['#ff6347', '#28a745', '#0073e6', '#ffcc00', '#ff00ff'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            text.style.color = randomColor;
+        }
+    </script>
+    
+</body>
+</html>
