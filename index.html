@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AWS CI-CD Demo</title>
     <style>
+        /* General Styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Helvetica', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f0f2f5;
             color: #333;
-            text-align: center;
         }
 
         header {
-            background-color: #0073e6;
+            background-color: #0d6efd;
             color: white;
             padding: 20px 0;
+            text-align: center;
         }
 
         h1 {
-            font-size: 2.5em;
+            font-size: 3em;
             margin: 0;
         }
 
@@ -30,61 +32,115 @@
             color: #555;
         }
 
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 1.1em;
-            background-color: #28a745;
+        /* Container for content */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        /* Workflow Section */
+        .workflow-section {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .workflow-section h2 {
+            color: #0d6efd;
+            font-size: 2.5em;
+        }
+
+        .workflow-steps {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .step {
+            width: 30%;
+            min-width: 250px;
+            background-color: #007bff;
             color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-            transition: background-color 0.3s;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            transition: transform 0.3s;
         }
 
-        .button:hover {
-            background-color: #218838;
+        .step:hover {
+            transform: scale(1.05);
+            background-color: #0056b3;
         }
 
+        .step h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .step p {
+            font-size: 1em;
+        }
+
+        /* Footer Styles */
         footer {
-            background-color: #0073e6;
+            background-color: #0d6efd;
             color: white;
-            padding: 10px 0;
+            padding: 20px 0;
+            text-align: center;
             position: fixed;
-            width: 100%;
             bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
+
 <body>
 
     <header>
-        <h1>Demo AWS CI-CD</h1>
+        <h1>Demo AWS CI-CD Pipeline</h1>
+        <p>Version: 02 - Auto Build & Deploy</p>
     </header>
 
-    <main>
-        <p>Testing auto build V: 02</p>
+    <div class="container">
+        <!-- Workflow Section -->
+        <div class="workflow-section">
+            <h2>Project Workflow</h2>
+            <p>This workflow demonstrates the AWS CI/CD process triggered by a GitHub commit.</p>
 
-        <!-- Button that changes text color -->
-        <a href="#" class="button" onclick="changeTextColor()">Change Text Color</a>
+            <div class="workflow-steps">
+                <!-- Step 1 -->
+                <div class="step">
+                    <h3>Step 1: Code Push to GitHub</h3>
+                    <p>Developer pushes the latest code changes to the GitHub repository.</p>
+                </div>
 
-        <!-- Placeholder paragraph to change the color -->
-        <p id="colorChangeText">Click the button to change my color!</p>
-    </main>
+                <!-- Step 2 -->
+                <div class="step">
+                    <h3>Step 2: AWS CodePipeline Triggered</h3>
+                    <p>AWS CodePipeline detects the commit and automatically starts the build process.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step">
+                    <h3>Step 3: Build & Deploy</h3>
+                    <p>AWS CodeBuild compiles the code, and CodeDeploy deploys the new version to the environment.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer>
         <p>&copy; 2024 AWS CI-CD Demo by M. Naimat Ullah</p>
     </footer>
 
-    <script>
-        // JavaScript function to change text color on button click
-        function changeTextColor() {
-            const text = document.getElementById('colorChangeText');
-            const colors = ['#ff6347', '#28a745', '#0073e6', '#ffcc00', '#ff00ff'];
-            const randomColor = colors[Math.floor(Math.random() * colors.length)];
-            text.style.color = randomColor;
-        }
-    </script>
-    
 </body>
+
 </html>
