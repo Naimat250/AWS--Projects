@@ -4,8 +4,8 @@ phases:
   install:
     commands:
       - echo "Installing Nginx"
-      - sudo yum update -y
-      - sudo yum install nginx -y
+    #  - sudo yum update -y
+    #  - sudo yum install nginx -y
   
   build:
     commands:
@@ -18,7 +18,4 @@ phases:
 artifacts:
   files:
     - '**/*'
-  discard-paths: yes  # Optional: Flatten the directory structure
-
-# Optional: Define a base directory if needed
-# base-directory: 'build_output'
+ 
